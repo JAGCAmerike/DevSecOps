@@ -1,0 +1,20 @@
+name: 01 - Mi primer workflow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje
+        run: echo "Este es el repo de act 9 y este workflow corre en GitHub Actions"
+      - name: Mostrar contexto básico
+        run: echo "Evento=$GITHUB_EVENT_NAME Rama=$GITHUB_REF_NAME"
+      - name: Mostrar versión de Node.js
+        run: node --version
